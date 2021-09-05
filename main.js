@@ -19,7 +19,13 @@ function updateDOM(user) {
 
 // Switch light themes
 function switchTheme() {
-  document.body.classList.toggle('dark-theme');
+  const body = document.body;
+
+  if (body.classList.contains('dark-theme')) {
+    return body.classList.remove('dark-theme');
+  }
+
+  return body.classList.add('dark-theme');
 }
 
 // Default user to be displayed

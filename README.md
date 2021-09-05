@@ -26,6 +26,7 @@ Users should be able to:
 - See relevant user information based on their search
 - Switch between light and dark themes
 - Have the correct color scheme chosen for them based on their computer preferences.
+- Persist theme with localStorage
 
 The GitHub users API endpoint is `https://api.github.com/users/:username`. So, if you wanted to search for the Octocat profile, you'd be able to make a request to `https://api.github.com/users/octocat`.
 
@@ -55,6 +56,9 @@ The GitHub users API endpoint is `https://api.github.com/users/:username`. So, i
 - Semantic HTML5 markup
 - CSS custom properties/vars
 - Desktop-first workflow
+- Javascript
+- Fetch API
+- Github API
 
 ### What I learned
 

@@ -34,7 +34,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--bg);
   min-height: 100vh;
+  padding: 75px 96px;
 
   /* Lightmode */
   --primary: #0079ff;
@@ -51,6 +53,8 @@ body {
 }
 
 body.dark-theme {
+  background-color: var(--bg);
+
   /* Darkmode */
   --primary: #0079ff;
 
@@ -112,5 +116,9 @@ h4 {
 
     --body: 0.813rem;
     --body-lh: 25px;
+  }
+
+  body {
+    padding: 32px 24px 80px 24px;
   }
 }
