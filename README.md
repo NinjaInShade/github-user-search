@@ -87,6 +87,8 @@ body {
   --bg: #f6f8ff;
   --bg-secondary: #fefefe;
 
+  --theme-switch-btn-hover: #222731;
+
   /* Neutral */
   --error: #f74646;
 }
@@ -103,6 +105,8 @@ body.dark-theme {
 
   --bg: #141d2f;
   --bg-secondary: #1e2a47;
+
+  --theme-switch-btn-hover: #90a4d4;
 
   /* Neutral */
   --error: #f74646;
@@ -122,9 +126,9 @@ if (prefersDarkScheme.matches) {
 }
 ```
 
-I then developed this bit of code even further to incorporate localstorage.
+I then developed this bit of code even further to incorporate localStorage.
 
-If the user changes the theme, this persists in localstorage. So, the next time they go to the site, it on the theme they selected last. This should override any OS preference, which I took into consideration. This is what I coded for this:
+If the user changes the theme, this persists in localStorage. So, the next time they go to the site, it's on the theme they selected last. This should override any OS preference, which I took into consideration. This is what I coded for this:
 
 ```js
 function initTheme() {
