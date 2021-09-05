@@ -122,6 +122,34 @@ if (prefersDarkScheme.matches) {
 }
 ```
 
+I then developed this bit of code even further to incorporate localstorage.
+
+If the user changes the theme, this persists in localstorage. So, the next time they go to the site, it on the theme they selected last. This should override any OS preference, which I took into consideration. This is what I coded for this:
+
+```js
+function initTheme() {
+  // If user has dark preference, set the dark theme by default.
+
+  // LocalStorage overrides this however, as the user has then changed the theme,
+  // which we want to persist to those settings then.
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const storedTheme = localStorage.getItem('theme');
+
+  if (storedTheme === 'dark') {
+    ThemeSwitchTxt.innerText = 'Light';
+
+    // Update theme classes toggles body class, and toggles the moon/sun icons to change over.
+    return updateThemeClasses();
+  }
+
+  if (prefersDarkScheme.matches) {
+    ThemeSwitchTxt.innerText = 'Dark';
+
+    return updateThemeClasses();
+  }
+}
+```
+
 ## Author
 
 - Website - [Leon Michalak](https://www.leonmichalak.dev)

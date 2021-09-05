@@ -17,7 +17,7 @@ function fetchUser(username) {
     });
 }
 
-// Updates DOM with new data
+// Updates DOM with new user data
 function updateDOM(user) {
   console.log(user);
 }
@@ -46,6 +46,7 @@ function switchTheme() {
 
 function initTheme() {
   // If user has dark preference, set the dark theme by default.
+
   // LocalStorage overrides this however, as the user has then changed the theme,
   // which we want to persist to those settings then.
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -67,5 +68,5 @@ function initTheme() {
 // Default user to be displayed
 fetchUser('NinjaInShade');
 
-// Default theme
+// Default theme to be activated
 initTheme();
