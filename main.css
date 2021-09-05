@@ -1,0 +1,36 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  font-size: 1.625rem;
+  line-height: 38px;
+  color: var(--txt-high-contrast);
+  font-weight: 700;
+}
+
+.header-theme-switch-btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 2.5px;
+}
+
+.header-theme-switch-btn span {
+  text-transform: uppercase;
+  color: var(--txt-low-contrast);
+  letter-spacing: 2.5px;
+  font-weight: 700;
+}
+
+.header-theme-switch-btn:hover span,
+.header-theme-switch-btn:hover path {
+  color: var(--theme-switch-btn-hover);
+  fill: var(--theme-switch-btn-hover);
+}
+
+.header-theme-icon {
+  margin-left: 16px;
+}

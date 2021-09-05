@@ -1,4 +1,5 @@
 * {
+  transition: all 0.2s ease-in-out;
   font-family: 'Space Mono', monospace;
   box-sizing: border-box;
   text-decoration: none;
@@ -27,6 +28,9 @@
   --body: 0.938rem;
   --body-lh: 25px;
 
+  --body-s: 0.813rem;
+  --body-s-lh: 18px;
+
   /* Other */
 }
 
@@ -48,6 +52,8 @@ body {
   --bg: #f6f8ff;
   --bg-secondary: #fefefe;
 
+  --theme-switch-btn-hover: #222731;
+
   /* Neutral */
   --error: #f74646;
 }
@@ -65,8 +71,16 @@ body.dark-theme {
   --bg: #141d2f;
   --bg-secondary: #1e2a47;
 
+  --theme-switch-btn-hover: #90a4d4;
+
   /* Neutral */
   --error: #f74646;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 730px;
+  width: 100%;
 }
 
 h1 {
@@ -99,7 +113,31 @@ h4 {
   font-weight: 400;
 }
 
-@media (max-width: 375px) {
+.body-s {
+  font-size: var(--body-s);
+  line-height: var(--body-s-lh);
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: none;
+}
+
+button:focus {
+  outline: dotted #697c9a 1.75px;
+}
+
+body.dark-theme button:focus {
+  outline: dotted #90a4d4 1.75px;
+}
+
+@media (max-width: 500px) {
   :root {
     /* Typography */
     --h1: 1rem;

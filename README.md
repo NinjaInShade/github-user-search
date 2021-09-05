@@ -62,7 +62,7 @@ The GitHub users API endpoint is `https://api.github.com/users/:username`. So, i
 
 ### What I learned
 
-The fetching from the API part wasn't so hard. I did get confused for a second with promises but I figured it out.
+The fetching from the API part wasn't so hard. I did get confused for a second with promises and what was actually getting returned, but I figured it out.
 
 The bulk of this project was spent structuring the dark/light theme modes, and colours in a clean and scalable manner.
 

@@ -20,12 +20,19 @@ function updateDOM(user) {
 // Switch light themes
 function switchTheme() {
   const body = document.body;
+  const ThemeSwitchTxt = document.getElementById('theme-switch-text');
+  const moonIcon = document.getElementById('moon');
+  const sunIcon = document.getElementById('sun');
 
   if (body.classList.contains('dark-theme')) {
-    return body.classList.remove('dark-theme');
+    ThemeSwitchTxt.innerText = 'Dark';
+  } else {
+    ThemeSwitchTxt.innerText = 'Light';
   }
 
-  return body.classList.add('dark-theme');
+  moonIcon.classList.toggle('hidden');
+  sunIcon.classList.toggle('hidden');
+  body.classList.toggle('dark-theme');
 }
 
 // Default user to be displayed
