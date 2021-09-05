@@ -1,5 +1,5 @@
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Space Mono', monospace;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
@@ -35,9 +35,20 @@
   --error: #f74646;
 
   /* Typography */
-  --h1: 1.75rem;
+  --h1: 1.625rem;
+  --h1-lh: 38px;
 
-  --body: 1rem;
+  --h2: 1.375rem;
+  --h2-lh: 33px;
+
+  --h3: 1rem;
+  --h3-lh: 24px;
+
+  --h4: 0.813rem;
+  --h4-lh: 20px;
+
+  --body: 0.938rem;
+  --body-lh: 25px;
 
   /* Other */
 }
@@ -51,16 +62,50 @@ body {
 
 h1 {
   font-size: var(--h1);
+  line-height: var(--h1-lh);
+  font-weight: 700;
 }
 
-.body-text {
+h2 {
+  font-size: var(--h2);
+  line-height: var(--h2-lh);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--h3);
+  line-height: var(--h3-lh);
+  font-weight: 400;
+}
+
+h4 {
+  font-size: var(--h4);
+  line-height: var(--h4-lh);
+  font-weight: 400;
+}
+
+.body {
   font-size: var(--body);
+  line-height: var(--body-lh);
+  font-weight: 400;
 }
 
 @media (max-width: 375px) {
   :root {
-    --h1: 22px;
+    /* Typography */
+    --h1: 1rem;
+    --h1-lh: 24px;
 
-    --body: 0.938rem;
+    --h2: 1rem;
+    --h2-lh: 24px;
+
+    --h3: 0.813rem;
+    --h3-lh: 19px;
+
+    --h4: 0.688rem;
+    --h4-lh: 16px;
+
+    --body: 0.813rem;
+    --body-lh: 25px;
   }
 }
