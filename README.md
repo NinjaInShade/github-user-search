@@ -66,7 +66,61 @@ The fetching from the API part wasn't so hard. I did get confused for a second w
 
 The bulk of this project was spent structuring the dark/light theme modes, and colours in a clean and scalable manner.
 
-I looked at the design file and calculated similar var names, so all I'd have to do no additional styling in the CSS file of that component, just switch the global CSS vars, and it would work.
+I looked at the design file and calculated similar var names, so all I'd have to do no additional styling in the CSS file of that component, just switch the global CSS vars, and it would work. I used this by setting vars on body, and then overriding those vars in the body class if it also had a "dark-theme" class:
+
+```css
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
+  min-height: 100vh;
+  padding: 75px 96px;
+
+  /* Lightmode */
+  --primary: #0079ff;
+
+  --txt-high-contrast: #2b3442;
+  --txt-mid-contrast: #4b6a9b;
+  --txt-low-contrast: #697c9a;
+
+  --bg: #f6f8ff;
+  --bg-secondary: #fefefe;
+
+  /* Neutral */
+  --error: #f74646;
+}
+
+body.dark-theme {
+  background-color: var(--bg);
+
+  /* Darkmode */
+  --primary: #0079ff;
+
+  --txt-high-contrast: #fff;
+  --txt-mid-contrast: #ffff;
+  --txt-low-contrast: #fff;
+
+  --bg: #141d2f;
+  --bg-secondary: #1e2a47;
+
+  /* Neutral */
+  --error: #f74646;
+}
+```
+
+I also set the default colour theme based on the users colour preference on their OS, using some Javascript:
+
+```js
+// If user has dark preference, set the dark theme by default.
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+if (prefersDarkScheme.matches) {
+  document.body.classList.add('dark-theme');
+} else {
+  document.body.classList.remove('dark-theme');
+}
+```
 
 ## Author
 
