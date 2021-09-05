@@ -62,6 +62,8 @@ The fetching from the API part wasn't so hard. I did get confused for a second w
 
 The bulk of this project was spent structuring the dark/light theme modes, and colours in a clean and scalable manner.
 
+I looked at the design file and calculated similar var names, so all I'd have to do no additional styling in the CSS file of that component, just switch the global CSS vars, and it would work.
+
 ## Author
 
 - Website - [Leon Michalak](https://www.leonmichalak.dev)
