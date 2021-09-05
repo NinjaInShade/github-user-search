@@ -11,9 +11,28 @@
   scroll-behavior: smooth;
   font-size: 16px;
 
-  /* Primary */
+  /* Lightmode */
+  --primary: #0079ff;
+
+  --txt-high-contrast: #2b3442;
+  --txt-mid-contrast: #4b6a9b;
+  --txt-low-contrast: #697c9a;
+
+  --bg: #f6f8ff;
+  --bg-secondary: #fefefe;
+
+  /* Darkmode */
+  --primary: #0079ff;
+
+  --txt-high-contrast: #fff;
+  --txt-mid-contrast: #ffff;
+  --txt-low-contrast: #fff;
+
+  --bg: #141d2f;
+  --bg-secondary: #1e2a47;
 
   /* Neutral */
+  --error: #f74646;
 
   /* Typography */
   --h1: 1.75rem;
