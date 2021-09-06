@@ -18,7 +18,7 @@
   background-color: var(--primary-hover);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .btn-primary {
     font-size: 0.875rem;
     padding: 12.5px 16px;

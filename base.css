@@ -163,7 +163,7 @@ body.dark-theme a:focus {
   opacity: 0.5;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   :root {
     /* Typography */
     --h1: 1rem;

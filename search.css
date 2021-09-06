@@ -39,9 +39,10 @@ body.dark-theme .search-container {
   min-width: 80px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .search-container {
     padding: 7px;
+    margin-bottom: 16px;
   }
 
   .search-icon {
