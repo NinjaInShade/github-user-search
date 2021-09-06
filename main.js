@@ -33,6 +33,34 @@ async function fetchUser(username) {
 
 // Updates DOM with new user data
 function updateDOM(user) {
+  const joinedAt = user.created_at.split('T')[0];
+  const parsedJoinedAt = joinedAt.split('-');
+
+  const year = parsedJoinedAt[0];
+  const month = parsedJoinedAt[1];
+  const day = parsedJoinedAt[2];
+
+  // Converts month to shortened text version
+  const date = new Date(year, month, day);
+  date.setMonth(month - 1);
+
+  const monthTxt = date.toLocaleString('en', { month: 'short' });
+
+  console.log(monthTxt);
+
+  const userImg = document.getElementById('user-img');
+  const userImgMobile = document.getElementById('user-img-mobile');
+
+  const userName = document.getElementById('user-name');
+  const userTimeJoined = document.getElementById('user-joined-time');
+  const userUsername = document.getElementById('user-username');
+
+  userImg.src = user.avatar_url;
+  userImgMobile.src = user.avatar_url;
+  userTimeJoined.dateTime = joinedAt;
+  userTimeJoined.innerText = `Joined ${day} ${monthTxt} ${year}`;
+  userName.innerText = user.name;
+  userUsername.innerText = `@${user.login}`;
   console.log(user);
 }
 

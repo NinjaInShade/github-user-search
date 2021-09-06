@@ -34,3 +34,59 @@ header {
 .header-theme-icon {
   margin-left: 16px;
 }
+
+.user-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--bg-secondary);
+  box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
+  border-radius: 15px;
+  padding: 48px;
+}
+
+body.dark-theme .user-section {
+  box-shadow: none;
+}
+
+.user-img {
+  margin-right: 36px;
+  border-radius: 50%;
+  height: 117px;
+  width: 117px;
+}
+
+.user-main {
+  flex-grow: 1;
+}
+
+.user-top {
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 2px;
+}
+
+#user-img-mobile {
+  display: none;
+}
+
+.user-name {
+  color: var(--txt-high-contrast);
+}
+
+.user-joined {
+  color: var(--txt-low-contrast);
+}
+
+.user-username {
+  color: var(--primary);
+}
+
+@media (max-width: 500px) {
+  #user-img-mobile {
+    display: block;
+  }
+}
