@@ -47,7 +47,7 @@ The GitHub users API endpoint is `https://api.github.com/users/:username`. So, i
 
 ### Links
 
-- Solution URL: (https://www.frontendmentor.io/solutions/responsive-order-summary-card-TFXa8ZDRV)
+- Solution URL: (https://www.frontendmentor.io/solutions/responsive-github-api-user-search-api-with-darklight-theme-switch-rqG2i-9TT)
 - Live Site URL: (https://lm-github-user-search.netlify.app/)
 
 ## My process
