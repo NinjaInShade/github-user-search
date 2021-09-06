@@ -132,8 +132,6 @@ function updateDOM(user) {
     userOrganization.querySelector('.user-link').innerText = user.company;
     userOrganization.querySelector('.user-link').href = `https://github.com/${userOrganizationWithoutAt}`;
   }
-
-  console.log(user);
 }
 
 // Toggles body class and switches over icons
