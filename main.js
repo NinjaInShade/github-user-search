@@ -17,14 +17,18 @@ function submitForm(e) {
 async function fetchUser(username) {
   SearchError.classList.add('hidden');
 
-  const response = await fetch(`https://api.github.com/users/${username}`);
-  const parsedResponse = await response.json();
+  try {
+    const response = await fetch(`https://api.github.com/users/${username}`);
+    const parsedResponse = await response.json();
 
-  if (!response.ok) {
-    return SearchError.classList.remove('hidden');
+    if (!response.ok) {
+      return SearchError.classList.remove('hidden');
+    }
+
+    return updateDOM(parsedResponse);
+  } catch (err) {
+    return console.log(err);
   }
-
-  return updateDOM(parsedResponse);
 }
 
 // Updates DOM with new user data
