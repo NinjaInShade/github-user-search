@@ -145,13 +145,13 @@ input {
 
 button:focus,
 input:focus,
-a[attr='href']:focus {
+a:focus {
   outline: dotted #697c9a 1.75px;
 }
 
 body.dark-theme button:focus,
 body.dark-theme input:focus,
-body.dark-theme a[attr='href']:focus {
+body.dark-theme a:focus {
   outline: dotted #90a4d4 1.75px;
 }
 

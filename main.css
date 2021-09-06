@@ -133,7 +133,7 @@ body.dark-theme .user-section {
   margin-left: 18px;
 }
 
-.user-link-container a[attr='href']:hover {
+.user-link-container a:hover {
   text-decoration: underline;
 }
 
