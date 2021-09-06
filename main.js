@@ -1,20 +1,30 @@
 const body = document.body;
 const ThemeSwitchTxt = document.getElementById('theme-switch-text');
+const SearchError = document.getElementById('search-error');
 const moonIcon = document.getElementById('moon');
 const sunIcon = document.getElementById('sun');
 
+// Submit form
+function submitForm(e) {
+  e.preventDefault();
+
+  const githubUsername = document.getElementById('github-username').value;
+
+  fetchUser(githubUsername);
+}
+
 // Fetch user by username with github API
-function fetchUser(username) {
-  return fetch(`https://api.github.com/users/${username}`)
-    .then((res) => {
-      return res.json();
-    })
-    .then((user) => {
-      return updateDOM(user);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+async function fetchUser(username) {
+  SearchError.classList.add('hidden');
+
+  const response = await fetch(`https://api.github.com/users/${username}`);
+  const parsedResponse = await response.json();
+
+  if (!response.ok) {
+    return SearchError.classList.remove('hidden');
+  }
+
+  return updateDOM(parsedResponse);
 }
 
 // Updates DOM with new user data
@@ -22,6 +32,7 @@ function updateDOM(user) {
   console.log(user);
 }
 
+// Toggles body class and switches over icons
 function updateThemeClasses() {
   moonIcon.classList.toggle('hidden');
   sunIcon.classList.toggle('hidden');

@@ -44,10 +44,14 @@ body {
 
   /* Lightmode */
   --primary: #0079ff;
+  --primary-hover: #60abff;
 
   --txt-high-contrast: #2b3442;
   --txt-mid-contrast: #4b6a9b;
   --txt-low-contrast: #697c9a;
+
+  --txt-search: #222731;
+  --txt-search-placeholder: #4b6a9b;
 
   --bg: #f6f8ff;
   --bg-secondary: #fefefe;
@@ -63,10 +67,14 @@ body.dark-theme {
 
   /* Darkmode */
   --primary: #0079ff;
+  --primary-hover: #60abff;
 
   --txt-high-contrast: #fff;
   --txt-mid-contrast: #ffff;
   --txt-low-contrast: #fff;
+
+  --txt-search: #fff;
+  --txt-search-placeholder: #fff;
 
   --bg: #141d2f;
   --bg-secondary: #1e2a47;
@@ -129,11 +137,19 @@ button {
   border: none;
 }
 
-button:focus {
+input {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button:focus,
+input:focus {
   outline: dotted #697c9a 1.75px;
 }
 
-body.dark-theme button:focus {
+body.dark-theme button:focus,
+body.dark-theme input:focus {
   outline: dotted #90a4d4 1.75px;
 }
 
