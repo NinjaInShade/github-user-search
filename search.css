@@ -25,6 +25,7 @@ body.dark-theme .search-container {
   padding: 6px 0;
   margin-right: 20px;
   flex-grow: 1;
+  min-width: 0;
 }
 
 .search-input::placeholder {
@@ -35,10 +36,22 @@ body.dark-theme .search-container {
   color: var(--error);
   margin-right: 24px;
   font-weight: 700;
+  min-width: 80px;
 }
 
 @media (max-width: 500px) {
   .search-container {
     padding: 7px;
+  }
+
+  .search-icon {
+    margin: 0 9px 0 6px;
+    max-height: 20px;
+    max-width: 20px;
+  }
+
+  .search-input {
+    font-size: 0.813rem;
+    margin-right: 9px;
   }
 }
