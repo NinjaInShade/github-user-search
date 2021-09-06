@@ -85,6 +85,58 @@ body.dark-theme .user-section {
   color: var(--primary);
 }
 
+.user-bio {
+  color: var(--txt-mid-contrast);
+  margin: 20px 0 32px 0;
+}
+
+.user-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--bg);
+  padding: 16px 32px;
+  border-radius: 10px;
+  margin-bottom: 36px;
+}
+
+.user-stat-title {
+  color: var(--txt-mid-contrast);
+  margin-bottom: 1;
+}
+
+.user-stat-value {
+  color: var(--txt-high-contrast);
+}
+
+.user-links {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  column-gap: 18px;
+  row-gap: 18px;
+}
+
+.user-link-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-link-icon path {
+  fill: var(--txt-mid-contrast);
+}
+
+.user-link {
+  color: var(--txt-mid-contrast);
+  margin-left: 18px;
+}
+
+.user-link-container a[attr='href']:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 500px) {
   #user-img-mobile {
     display: block;

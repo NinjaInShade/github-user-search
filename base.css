@@ -144,13 +144,23 @@ input {
 }
 
 button:focus,
-input:focus {
+input:focus,
+a[attr='href']:focus {
   outline: dotted #697c9a 1.75px;
 }
 
 body.dark-theme button:focus,
-body.dark-theme input:focus {
+body.dark-theme input:focus,
+body.dark-theme a[attr='href']:focus {
   outline: dotted #90a4d4 1.75px;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 @media (max-width: 500px) {
