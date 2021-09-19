@@ -171,6 +171,12 @@ function initTheme() {
     return updateThemeClasses();
   }
 
+  if (storedTheme === 'light') {
+    ThemeSwitchTxt.innerText = 'Dark';
+
+    return updateThemeClasses();
+  }
+
   if (prefersDarkScheme.matches) {
     ThemeSwitchTxt.innerText = 'Dark';
 
