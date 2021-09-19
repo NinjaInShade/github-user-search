@@ -135,26 +135,35 @@ function updateDOM(user) {
 }
 
 // Toggles body class and switches over icons
-function updateThemeClasses() {
-  moonIcon.classList.toggle('hidden');
-  sunIcon.classList.toggle('hidden');
-  body.classList.toggle('dark-theme');
+function updateThemeClasses(themeToSwitchTo) {
+  sunIcon.classList.add('hidden');
+  moonIcon.classList.add('hidden');
+
+  if (themeToSwitchTo === 'dark') {
+    sunIcon.classList.remove('hidden');
+    return body.classList.add('dark-theme');
+  }
+
+  moonIcon.classList.remove('hidden');
+  body.classList.remove('dark-theme');
 }
 
-// Switch light themes
+// Switch light themes via button
 function switchTheme() {
   // If it contains dark-theme class, we're switching to light theme
   if (body.classList.contains('dark-theme')) {
     ThemeSwitchTxt.innerText = 'Dark';
 
     localStorage.setItem('theme', 'light');
+
+    return updateThemeClasses('light');
   } else {
     ThemeSwitchTxt.innerText = 'Light';
 
     localStorage.setItem('theme', 'dark');
-  }
 
-  return updateThemeClasses();
+    return updateThemeClasses('dark');
+  }
 }
 
 function initTheme() {
@@ -168,19 +177,19 @@ function initTheme() {
   if (storedTheme === 'dark') {
     ThemeSwitchTxt.innerText = 'Light';
 
-    return updateThemeClasses();
+    return updateThemeClasses('dark');
   }
 
   if (storedTheme === 'light') {
     ThemeSwitchTxt.innerText = 'Dark';
 
-    return updateThemeClasses();
+    return updateThemeClasses('light');
   }
 
   if (prefersDarkScheme.matches) {
     ThemeSwitchTxt.innerText = 'Dark';
 
-    return updateThemeClasses();
+    return updateThemeClasses('dark');
   }
 }
 
