@@ -1,6 +1,7 @@
 const body = document.body;
 const ThemeSwitchTxt = document.getElementById('theme-switch-text');
 const SearchError = document.getElementById('search-error');
+const EmptyField = document.getElementById('empty-field')
 const moonIcon = document.getElementById('moon');
 const sunIcon = document.getElementById('sun');
 
@@ -8,9 +9,22 @@ const sunIcon = document.getElementById('sun');
 function submitForm(e) {
   e.preventDefault();
 
+  EmptyField.classList.add('empty-field');
+
   const githubUsername = document.getElementById('github-username').value;
 
-  fetchUser(githubUsername);
+  const githubUsername_trimmed = githubUsername.trim();
+
+  if (githubUsername_trimmed.length == 0) {
+    EmptyField.classList.remove('empty-field');
+    document.getElementById('github-username').value = ''
+  }
+
+  else {
+    const githubUsername_joined = githubUsername_trimmed.split(' ').join('')
+    fetchUser(githubUsername_joined);
+  }
+
 }
 
 // Fetch user by username with github API
