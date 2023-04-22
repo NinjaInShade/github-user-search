@@ -9,20 +9,18 @@ const sunIcon = document.getElementById('sun');
 function submitForm(e) {
   e.preventDefault();
 
-  EmptyField.classList.add('empty-field');
+  SearchError.classList.add('hidden');
+  EmptyField.classList.add('hidden');
 
-  const githubUsername = document.getElementById('github-username').value;
+  const githubUsernameEl = document.getElementById('github-username');
+  githubUsernameEl.value = githubUsernameEl.value?.trim();
+  const githubUsername = githubUsernameEl.value ?? '';
 
-  const githubUsername_trimmed = githubUsername.trim();
-
-  if (githubUsername_trimmed.length == 0) {
-    EmptyField.classList.remove('empty-field');
-    document.getElementById('github-username').value = ''
-  }
-
-  else {
-    const githubUsername_joined = githubUsername_trimmed.split(' ').join('')
-    fetchUser(githubUsername_joined);
+  if (!githubUsername.length) {
+    EmptyField.classList.remove('hidden');
+  } else {
+    const githubUsernameJoined = githubUsername.split(' ').join('')
+    fetchUser(githubUsernameJoined);
   }
 
 }

@@ -130,10 +130,6 @@ h4 {
   display: none;
 }
 
-.empty-field{
-  display: none;
-}
-
 button {
   cursor: pointer;
   outline: none;
